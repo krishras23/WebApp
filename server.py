@@ -23,9 +23,10 @@ def trello():
 
 @app.route('/success/<name>')
 def success(name):
-    return 'welcome %s' % name
+    return 'welcome %s to the party' % name
 
 
+# decorator method
 @app.route('/login', methods=['POST', 'GET'])
 def login():
     if request.method == 'POST':
@@ -34,6 +35,18 @@ def login():
     else:
         user = request.args.get('nm')
         return redirect(url_for('success', name=user))
+
+
+@app.route('/requestingjson', methods=['POST'])
+def requestingjson():
+    data = request.get_json()
+    name = data['name'] + "joe"
+    location = data['location']
+    occupation = data['occupation']
+    random_dude = data['family']
+    more_random = random_dude[2]
+    print(random_dude)
+    return ''
 
 
 app.run()
