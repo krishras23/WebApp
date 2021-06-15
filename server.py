@@ -1,52 +1,33 @@
 import flask
-from flask import redirect, url_for, request
-from flask import jsonify
+from flask import request, jsonify
 
-from dbhelpler import get_databases
+from dbhelper import get_tasks, create_task
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
 
 
 @app.route('/', methods=['GET'])
-def trello():
-    list_of_databases = get_databases()
-    dict_db = {}
+def show_tasks():
+    all_tasks = get_tasks()
+    task_dict = {}
     i = 1
     z = 0
-    for x in list_of_databases:
-        dict_db[i] = list_of_databases[z]
+    for x in all_tasks:
+        task_dict[i] = all_tasks[z]
         i = i + 1
         z = z + 1
-    return jsonify(dict_db)
+    return jsonify(task_dict)
 
 
-@app.route('/success/<name>')
-def success(name):
-    return 'welcome %s to the party' % name
-
-
-# decorator method
-@app.route('/login', methods=['POST', 'GET'])
-def login():
-    if request.method == 'POST':
-        user = request.form['nm']
-        return redirect(url_for('success', name=user))
-    else:
-        user = request.args.get('nm')
-        return redirect(url_for('success', name=user))
-
-
-@app.route('/requestingjson', methods=['POST'])
-def requestingjson():
+@app.route('/create_task', methods=['POST'])
+def task_creation():
     data = request.get_json()
-    name = data['name'] + "joe"
-    location = data['location']
-    occupation = data['occupation']
-    random_dude = data['family']
-    more_random = random_dude[2]
-    print(random_dude)
-    return ''
+    task = data['task']
+    importance = data['importance']
+    owner = data['owner']
+    create_task(task, importance, owner)
+    return ""
 
 
 app.run()
