@@ -37,3 +37,19 @@ def create_task(the_task_name, the_task_importance, the_task_owner):
                 return
     except Error as e:
         print(e)
+
+
+def delete_task(task_name):
+    try:
+        with connect(
+                host="localhost",
+                user='root',
+                password='tomato',
+        ) as connection:
+            delete_task_query = "delete from trello.tasks where task_name like (%s)"
+            with connection.cursor() as cursor:
+                cursor.execute(delete_task_query, task_name)
+                connection.commit()
+                return
+    except Error as e:
+        print(e)
