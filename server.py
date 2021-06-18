@@ -37,4 +37,3 @@ def task_deletion():
     delete_task(task)
 
 
-app.run()
