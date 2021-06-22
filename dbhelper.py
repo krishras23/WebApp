@@ -39,17 +39,54 @@ def create_task(the_task_name, the_task_importance, the_task_owner):
         print(e)
 
 
-def delete_task(task_name):
+def update_task(old_owner, new_owner):
     try:
         with connect(
                 host="localhost",
                 user='root',
                 password='tomato',
         ) as connection:
-            delete_task_query = "delete from trello.tasks where task_name like (%s)"
+            update_task_query = "UPDATE trello.tasks SET owner = \"" + \
+                                new_owner + "\" WHERE owner like \"" + old_owner + "\""
+            print(update_task_query)
             with connection.cursor() as cursor:
-                cursor.execute(delete_task_query, task_name)
+                cursor.execute(update_task_query)
                 connection.commit()
-                return
+                return ""
     except Error as e:
         print(e)
+
+
+update_task("Anvirrr", "Deepti")
+
+
+def delete_task(importance):
+    try:
+        with connect(
+                host="localhost",
+                user='root',
+                password='tomato',
+        ) as connection:
+            delete_task_query = "delete from trello.tasks where importance = " + str(importance)
+            with connection.cursor() as cursor:
+                cursor.execute(delete_task_query)
+                connection.commit()
+                return ""
+    except Error as e:
+        print(e)
+
+
+def update(old_owner, new_owner):
+    # print("UPDATE trello.tasks SET owner = " + old_owner + " WHERE owner like " + new_owner)
+    print("UPDATE trello.tasks SET owner = \"" + old_owner + "\" WHERE owner like \"" + new_owner + "\"")
+
+
+#update("anvi", "kapil")
+
+
+def hello(name):
+    # print("hello \"" + name + "\" hello")
+    print("hello " + name + " hello")
+
+
+#String formatting in python

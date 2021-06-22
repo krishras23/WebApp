@@ -1,7 +1,7 @@
 import flask
 from flask import request, jsonify
 
-from dbhelper import get_tasks, create_task, delete_task
+from dbhelper import get_tasks, create_task, delete_task, update_task
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
@@ -30,10 +30,18 @@ def task_creation():
     return ""
 
 
+@app.route('/update_task', methods=['PATCH'])
+def updating_task():
+    update_task()
+    return ""
+
+
 @app.route('/delete', methods=['DELETE'])
 def task_deletion():
     data = request.get_json()
     task = data['task']
-    delete_task(task)
+    delete_task()
+    return ""
 
 
+app.run()

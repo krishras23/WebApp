@@ -2,6 +2,7 @@ create database test;
 use test;
 create table  student (name varchar (20), age int );
 
+rom trello.tasks where importance = 23
 
 insert into test.student values ('krish', 16);
 insert into test.student values ('joe', 17);
