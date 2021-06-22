@@ -81,12 +81,14 @@ def update(old_owner, new_owner):
     print("UPDATE trello.tasks SET owner = \"" + old_owner + "\" WHERE owner like \"" + new_owner + "\"")
 
 
-#update("anvi", "kapil")
+# update("anvi", "kapil")
 
 
 def hello(name):
     # print("hello \"" + name + "\" hello")
     print("hello " + name + " hello")
 
+# String formatting in python
 
-#String formatting in python
+# def delete(owner):
+# print("delete from trello.tasks where owner like \"" + owner + "\"")

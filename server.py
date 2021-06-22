@@ -30,17 +30,20 @@ def task_creation():
     return ""
 
 
-@app.route('/update_task', methods=['PATCH'])
-def updating_task():
-    update_task()
-    return ""
-
-
 @app.route('/delete', methods=['DELETE'])
 def task_deletion():
     data = request.get_json()
-    task = data['task']
-    delete_task()
+    importance = data['importance']
+    delete_task(importance)
+    return ""
+
+
+@app.route('/update_task', methods=['PATCH'])
+def updating_task():
+    data = request.get_json()
+    old_owner = data['old_owner']
+    new_owner = data['new_owner']
+    update_task(old_owner, new_owner)
     return ""
 
 

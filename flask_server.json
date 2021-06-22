@@ -1,0 +1,195 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2021-06-22T04:01:46.752Z",
+  "__export_source": "insomnia.desktop.app:v2021.3.0",
+  "resources": [
+    {
+      "_id": "req_b6f34c068eca4599b54ac1999320f593",
+      "parentId": "wrk_16a57a199cc0413cb1598b6c58b7174b",
+      "modified": 1624331345838,
+      "created": 1623288792464,
+      "url": "{{ _.server_uri }}/create_task",
+      "name": "Create Task",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"task\":\"new\", \n\t\"owner\": \"anvi\",\n\t\"importance\": 17\n \t}\n\n\n"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_900a318d6e3245298ecf710ba4887546"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1623288829299,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "wrk_16a57a199cc0413cb1598b6c58b7174b",
+      "parentId": null,
+      "modified": 1623288756966,
+      "created": 1623288756966,
+      "name": "Insomnia",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_6f8ab266b02c460bae39b1aeee03cba1",
+      "parentId": "wrk_16a57a199cc0413cb1598b6c58b7174b",
+      "modified": 1624298772770,
+      "created": 1623288829249,
+      "url": "{{ _.server_uri }}",
+      "name": "Show Task",
+      "description": "",
+      "method": "GET",
+      "body": {
+        "mimeType": "multipart/form-data",
+        "params": []
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data",
+          "id": "pair_ba183662250648958d5106cf70767385"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1623288829249,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_f95bc91e210c40b1bdc4f2f07c250491",
+      "parentId": "wrk_16a57a199cc0413cb1598b6c58b7174b",
+      "modified": 1624334444049,
+      "created": 1623715153863,
+      "url": "{{ _.server_uri }}/delete",
+      "name": "Delete task",
+      "description": "",
+      "method": "DELETE",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"task\":\"get haricut\"\n}\n"
+      },
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "description": "",
+          "id": "pair_8149540220f44ea9bc3d99f2ee8d52d2"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_d07ba88139b641f9b20231ef1d1d9265"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1623715153863,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_e913ed3204cc49fdb75a3dfcdedcbc95",
+      "parentId": "wrk_16a57a199cc0413cb1598b6c58b7174b",
+      "modified": 1624318868406,
+      "created": 1624298754847,
+      "url": "{{ _.server_uri }}/update_task",
+      "name": "Update Task",
+      "description": "",
+      "method": "PATCH",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1624298754847,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_50e3bbc8c29cd6acbdeb67c714ca9addafc69276",
+      "parentId": "wrk_16a57a199cc0413cb1598b6c58b7174b",
+      "modified": 1623288757003,
+      "created": 1623288757003,
+      "name": "Base Environment",
+      "data": {},
+      "dataPropertyOrder": null,
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1623288757003,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_50e3bbc8c29cd6acbdeb67c714ca9addafc69276",
+      "parentId": "wrk_16a57a199cc0413cb1598b6c58b7174b",
+      "modified": 1623288757005,
+      "created": 1623288757005,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_80c621430a094ae9baee8ad04fc9461f",
+      "parentId": "wrk_16a57a199cc0413cb1598b6c58b7174b",
+      "modified": 1623288756967,
+      "created": 1623288756967,
+      "fileName": "Insomnia",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    },
+    {
+      "_id": "env_9c7ddb5d81a241f5ab46fafae88b6a46",
+      "parentId": "env_50e3bbc8c29cd6acbdeb67c714ca9addafc69276",
+      "modified": 1623288968819,
+      "created": 1623288847319,
+      "name": "Flask server local",
+      "data": {
+        "server_uri": "http://127.0.0.1:5000"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "server_uri"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1623288847319,
+      "_type": "environment"
+    }
+  ]
+}
