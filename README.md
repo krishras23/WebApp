@@ -6,10 +6,9 @@ pip3 install mysql-connector-python
 ```
 
 ## TODO
-- Flask API should return ID of an object (task) created using POST 
-- PUT, PATCH and DELETE requests via flask (use Insomnia to test)
+- Find a sample database that has 20-30 tables, data, to run complex queries
+- Order of [Execution](https://www.sisense.com/blog/sql-query-order-of-operations) 
 - Python functions to write json as column 
--Update SQL
 
 ## Git commands
 - git status
