@@ -76,6 +76,7 @@ def delete_task(importance):
         print(e)
 
 
+
 def update(old_owner, new_owner):
     # print("UPDATE trello.tasks SET owner = " + old_owner + " WHERE owner like " + new_owner)
     print("UPDATE trello.tasks SET owner = \"" + old_owner + "\" WHERE owner like \"" + new_owner + "\"")

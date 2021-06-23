@@ -109,4 +109,3 @@ FROM trello.events;
 
 SELECT id, browser->'$.os' browser
 FROM trello.events;
-
