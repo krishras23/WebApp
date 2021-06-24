@@ -109,3 +109,25 @@ FROM trello.events;
 
 SELECT id, browser->'$.os' browser
 FROM trello.events;
+
+
+SELECT lastname, firstname, reportsTo, jobtitle
+FROM employees
+WHERE jobTitle = "Sales Rep"
+AND reportsTo = 1143
+ORDER BY lastName DESC;
+
+
+SELECT DISTINCT
+    state, city
+FROM
+    customers
+WHERE
+    state IS NOT NULL
+ORDER BY
+    state,
+    city;
+
+
+
+SELECT state, contactFirstName from customers where country like "USA" or country like "UK" and state NOT NULL order by state ;

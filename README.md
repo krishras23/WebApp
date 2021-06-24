@@ -14,7 +14,7 @@ pip3 install mysql-connector-python
 ## Git commands
 - git status
 - git diff
-- git add <file-name>
+- git add <file-name> or git add . (all files)
 - git diff --cached 
 - git commit -m "message"
 - git push origin main

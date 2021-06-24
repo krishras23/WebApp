@@ -40,28 +40,6 @@ def create_task(the_task_name, the_task_importance, the_task_owner):
         print(e)
 
 
-def create_task_string(the_task_name, the_task_importance, the_task_owner):
-    try:
-        with connect(
-                host="localhost",
-                user='root',
-                password='tomato',
-        ) as connection:
-            create_task_query = "INSERT into trello.tasks (task_name, importance, owner) values {},{},{}"\
-                .format(the_task_name, the_task_importance, the_task_owner)
-            val = (the_task_name, the_task_importance, the_task_owner)
-            print(create_task_query)
-            with connection.cursor() as cursor:
-                cursor.execute(create_task_query, val)
-                connection.commit()
-                return
-    except Error as e:
-        print(e)
-
-
-create_task_string("hello", 12, "not me")
-
-
 def update_task(old_owner, new_owner):
     try:
         with connect(
@@ -69,8 +47,7 @@ def update_task(old_owner, new_owner):
                 user='root',
                 password='tomato',
         ) as connection:
-            update_task_query = "UPDATE trello.tasks SET owner = \"" + \
-                                new_owner + "\" WHERE owner like \"" + old_owner + "\""
+            update_task_query = "UPDATE trello.tasks SET owner = \"" + new_owner + "\" WHERE owner like \"" + old_owner + "\""
             print(update_task_query)
             with connection.cursor() as cursor:
                 cursor.execute(update_task_query)
@@ -80,24 +57,6 @@ def update_task(old_owner, new_owner):
         print(e)
 
 
-def update_task_string(old_owner, new_owner):
-    try:
-        with connect(
-                host="localhost",
-                user='root',
-                password='tomato',
-        ) as connection:
-                update_task_query = "UPDATE trello.tasks SET owner = {} WHERE owner like {}".format(new_owner, old_owner)
-            print(update_task_query)
-            with connection.cursor() as cursor:
-                cursor.execute(update_task_query)
-                connection.commit()
-                return ""
-        except Error as e:
-            print(e)
-
-
-update_task_string("new", "diff")
 
 
 def delete_task(importance):
@@ -132,22 +91,7 @@ def delete_task_string(importance):
         print(e)
 
 
-delete_task_string(88)
-
 
 def update(old_owner, new_owner):
     # print("UPDATE trello.tasks SET owner = " + old_owner + " WHERE owner like " + new_owner)
     print("UPDATE trello.tasks SET owner = \"" + old_owner + "\" WHERE owner like \"" + new_owner + "\"")
-
-
-# update("anvi", "kapil")
-
-
-def hello(name):
-    # print("hello \"" + name + "\" hello")
-    print("hello " + name + " hello")
-
-# String formatting in python
-
-# def delete(owner):
-# print("delete from trello.tasks where owner like \"" + owner + "\"")
