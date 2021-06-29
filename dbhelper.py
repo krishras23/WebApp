@@ -57,8 +57,6 @@ def update_task(old_owner, new_owner):
         print(e)
 
 
-
-
 def delete_task(importance):
     try:
         with connect(
@@ -91,7 +89,24 @@ def delete_task_string(importance):
         print(e)
 
 
+def joining_tables():
+    try:
+        with connect(
+                host="localhost",
+                user='root',
+                password='tomato',
+        ) as connection:
+            join_task_query = "join on from trello.tasks where importance = {}".format(importance)
+            with connection.cursor() as cursor:
+                cursor.execute(join_task_query)
+                connection.commit()
+                return ""
+    except Error as e:
+        print(e)
+
+print("reutrn null")
 
 def update(old_owner, new_owner):
     # print("UPDATE trello.tasks SET owner = " + old_owner + " WHERE owner like " + new_owner)
     print("UPDATE trello.tasks SET owner = \"" + old_owner + "\" WHERE owner like \"" + new_owner + "\"")
+
