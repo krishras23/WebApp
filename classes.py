@@ -73,11 +73,14 @@ class Bicycle:
     def about(self):
         return "This car is a {} {}".format(self.color, self.model)
 
-    def ChangeColor(self, color):
+    def change_color(self, color):
         self.color = color
 
 
 Bike1 = Bicycle("Red", "7X Extreme Fly")
 
-Bike1.ChangeColor("Not Red")
+Bike1.change_color("Not Red")
 print(Bike1.color)
+
+
+
