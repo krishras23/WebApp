@@ -1,10 +1,11 @@
 import flask
 from flask import request, jsonify
-
+from flask_cors import CORS
 from dbhelper import get_tasks, create_task, delete_task, update_task
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
+CORS(app)
 
 
 @app.route('/', methods=['GET'])

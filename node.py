@@ -24,16 +24,3 @@ class Camp:
 
     def get_price(self):
         return self.price
-
-
-c1 = Camp("Archery", "use bow and arrow", 100.23)
-n1 = Node(c1)
-
-print(n1.get_name().get_price())
-
-
-x = {}
-x["hello"] = 99
-x[99] = 99
-
-print(x)
