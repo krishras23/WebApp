@@ -1,8 +1,8 @@
-from listnode import ListNode
+from linkedlist import LinkedList
 from node import Node
 
 node1 = Node("first")
-ln = ListNode()
+ln = LinkedList()
 ln.append_node(node1)
 # ln.print_nodes()
 node2 = Node("second")

@@ -1,7 +1,7 @@
 from node import Node
 
 
-class ListNode:
+class LinkedList:
     def __init__(self):
         self.head = Node("head")
 
