@@ -7,10 +7,6 @@ x = BinaryTree(89)
 x.append_left(TreeNode(855))
 x.append_right(TreeNode(82255))
 
-
-
-
-
 # Test Tree Node
 
 root = TreeNode("val")
