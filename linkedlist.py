@@ -7,6 +7,14 @@ class LinkedList:
 
     def print_nodes(self):
         n = self.head.next
+        # this is the tail value (after the last node) whereas self.head
+        # would be the actual last node value
+        while n is not None:
+            print(n.get_name())
+            n = n.next
+
+    def printing_nodes(self):
+        n = self.head
         while n is not None:
             print(n.get_name())
             n = n.next
@@ -24,4 +32,3 @@ class LinkedList:
                 return True
             n = n.next
         return False
-
